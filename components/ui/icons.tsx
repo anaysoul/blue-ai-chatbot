@@ -137,6 +137,18 @@ function IconGitHub({ className, ...props }: React.ComponentProps<'svg'>) {
   )
 }
 
+function IconEY({ className, }: React.ComponentProps<'svg'>) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 40 40" fill="none">
+      <path d="M6.22204 31.9042H13.3148V27.7856H6.22204V24.5485H14.0676L11.4644 20.0369H0.338867V39.6523H16.0308V35.1406H6.22204V31.9042Z" fill="#2E2E38" />
+      <path d="M26.4744 20.0369L23.1426 26.4383L19.819 20.0369H13.3145L20.1678 31.9042V39.6523H26.0329V31.9042L32.8953 20.0369H26.4744Z" fill="#2E2E38" />
+      <path d="M38.7776 0L0 14.153L38.7776 7.3031V0Z" fill="#FFE600" />
+      className={cn('size-4', className)}
+      <title>EY</title>
+    </svg>
+  )
+}
+
 function IconSeparator({ className, ...props }: React.ComponentProps<'svg'>) {
   return (
     <svg
@@ -482,6 +494,7 @@ export {
   IconOpenAI,
   IconVercel,
   IconGitHub,
+  IconEY,
   IconSeparator,
   IconArrowDown,
   IconArrowRight,
