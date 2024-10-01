@@ -5,10 +5,7 @@ import { cn } from '@/lib/utils'
 import { auth } from '@/auth'
 import { Button, buttonVariants } from '@/components/ui/button'
 import {
-  IconGitHub,
-  IconNextChat,
   IconSeparator,
-  IconVercel,
   IconEY
 } from '@/components/ui/icons'
 import { UserMenu } from '@/components/user-menu'
@@ -17,33 +14,30 @@ import { SidebarToggle } from './sidebar-toggle'
 import { ChatHistory } from './chat-history'
 import { Session } from '@/lib/types'
 
-async function UserOrLogin() {
+async function SidebarControls() {
+  const session = (await auth()) as Session
+  return session?.user ? (
+    <>
+      <IconSeparator className="size-8 text-muted-foreground/50 mx-2" />
+      <SidebarMobile>
+        <ChatHistory userId={session.user.id} />
+      </SidebarMobile>
+      <SidebarToggle />
+    </>
+  ) : null
+}
+
+async function LoginOrUserMenu() {
   const session = (await auth()) as Session
   return (
     <>
       {session?.user ? (
-        <>
-          <SidebarMobile>
-            <ChatHistory userId={session.user.id} />
-          </SidebarMobile>
-          <SidebarToggle />
-        </>
+        <UserMenu user={session.user} />
       ) : (
-        <Link href="/new" rel="nofollow">
-          <IconNextChat className="size-6 mr-2 dark:hidden" inverted />
-          <IconNextChat className="hidden size-6 mr-2 dark:block" />
-        </Link>
+        <Button variant="link" asChild className={cn(buttonVariants())}>
+          <Link href="/login">Login</Link>
+        </Button>
       )}
-      <div className="flex items-center">
-        <IconSeparator className="size-6 text-muted-foreground/50" />
-        {session?.user ? (
-          <UserMenu user={session.user} />
-        ) : (
-          <Button variant="link" asChild className="-ml-2">
-            <Link href="/login">Login</Link>
-          </Button>
-        )}
-      </div>
     </>
   )
 }
@@ -52,13 +46,18 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 flex items-center justify-between w-full h-16 px-4 border-b shrink-0 bg-gradient-to-b from-background/10 via-background/50 to-background/80 backdrop-blur-xl">
       <div className="flex items-center">
+        <IconEY className="size-8 mb-2" />
         <React.Suspense fallback={<div className="flex-1 overflow-auto" />}>
-          <UserOrLogin />
+          <SidebarControls />
         </React.Suspense>
       </div>
-      <div className="flex items-center justify-center absolute left-1/2 transform -translate-x-1/2">
-        <IconEY className="size-10 mr-2" />
+      <div className="flex items-center justify-center">
         <h1 className="text-2xl font-bold leading-none mt-auto mb-[-2px]">Catalyst</h1>
+      </div>
+      <div className="flex items-center">
+        <React.Suspense fallback={<div className="flex-1 overflow-auto" />}>
+          <LoginOrUserMenu />
+        </React.Suspense>
       </div>
     </header>
   )
