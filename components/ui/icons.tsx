@@ -149,11 +149,11 @@ function IconEY({ className, ...props }: React.ComponentProps<'svg'>) {
       <title>EY</title>
       <path
         d="M6.22204 31.9042H13.3148V27.7856H6.22204V24.5485H14.0676L11.4644 20.0369H0.338867V39.6523H16.0308V35.1406H6.22204V31.9042Z"
-        fill="#2e2e38"
+        className={cn('fill-[#2e2e38] dark:fill-white')}
       />
       <path
         d="M26.4744 20.0369L23.1426 26.4383L19.819 20.0369H13.3145L20.1678 31.9042V39.6523H26.0329V31.9042L32.8953 20.0369H26.4744Z"
-        fill="#2E2E38"
+        className={cn('fill-[#2e2e38] dark:fill-white')}
       />
       <path d="M38.7776 0L0 14.153L38.7776 7.3031V0Z" fill="#FFE600" />
     </svg>
