@@ -7,17 +7,14 @@ export function FooterText({ className, ...props }: React.ComponentProps<'p'>) {
   return (
     <p
       className={cn(
-        'px-2 text-center text-xs leading-normal text-muted-foreground',
+        'px-2 text-center text-xs leading-normal text-muted-foreground italic border-t mt-4 pt-4',
         className
       )}
       {...props}
     >
-      Open source AI chatbot built with{' '}
-      <ExternalLink href="https://nextjs.org">Next.js</ExternalLink> and{' '}
-      <ExternalLink href="https://github.com/vercel/ai">
-        Vercel AI SDK
-      </ExternalLink>
-      .
+      Disclaimer: While the chatbot aims to provide accurate and helpful
+      information, please consult official documents or contact our support team
+      for formal guidance.
     </p>
   )
 }
