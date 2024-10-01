@@ -12,7 +12,7 @@ export function EmptyScreen() {
           Welcome to the Product Inventory Chatbot
         </h1>
         <p className="text-muted-foreground">
-          Welcome to the Catalyst Product Inventory Chatbot. This intelligent assistant is here to provide you with expert answers and real-time information about our product inventory.
+          This intelligent assistant is here to provide you with expert answers and real-time information about our product inventory.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4 w-full">
           <div className="flex flex-col gap-2">
