@@ -12,11 +12,11 @@ export function EmptyScreen() {
           Welcome to the Product Inventory Chatbot
         </h1>
         <p className="text-muted-foreground">
-          Welcome to the [Government Agency/Product Name] Product Inventory Chatbot. This intelligent assistant is here to provide you with expert answers and real-time information about our product inventory.
+          Welcome to the Catalyst Product Inventory Chatbot. This intelligent assistant is here to provide you with expert answers and real-time information about our product inventory.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4 w-full">
           <div className="flex flex-col gap-2">
-            <h2 className="text-lg font-semibold">Key Features:</h2>
+            <h2 className="text-lg font-semibold text-left">Key Features:</h2>
             <ul className="list-disc list-inside text-sm text-muted-foreground text-left">
               <li>Expert Assistance</li>
               <li>Real-Time Information</li>
@@ -25,7 +25,7 @@ export function EmptyScreen() {
             </ul>
           </div>
           <div className="flex flex-col gap-2">
-            <h2 className="text-lg font-semibold">How to Start:</h2>
+            <h2 className="text-lg font-semibold text-left">How to Start:</h2>
             <p className="text-sm text-muted-foreground text-left">
               Simply type your questions below, and the chatbot will guide you with accurate and up-to-date responses to assist you in finding the information you need quickly and efficiently.
             </p>
