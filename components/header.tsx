@@ -5,8 +5,10 @@ import { cn } from '@/lib/utils'
 import { auth } from '@/auth'
 import { Button, buttonVariants } from '@/components/ui/button'
 import {
+  IconGitHub,
   IconNextChat,
   IconSeparator,
+  IconVercel,
   IconEY
 } from '@/components/ui/icons'
 import { UserMenu } from '@/components/user-menu'
@@ -28,7 +30,8 @@ async function UserOrLogin() {
         </>
       ) : (
         <Link href="/new" rel="nofollow">
-          <IconEY className="size-6 mr-2 dark:hidden" />
+          <IconNextChat className="size-6 mr-2 dark:hidden" inverted />
+          <IconNextChat className="hidden size-6 mr-2 dark:block" />
         </Link>
       )}
       <div className="flex items-center">
@@ -53,8 +56,9 @@ export function Header() {
           <UserOrLogin />
         </React.Suspense>
       </div>
-      <div className="flex items-center justify-end space-x-2">
-
+      <div className="flex items-center justify-center absolute left-1/2 transform -translate-x-1/2">
+        <IconEY className="size-10 mr-2" />
+        <h1 className="text-2xl font-bold leading-none mt-auto mb-[-2px]">Catalyst</h1>
       </div>
     </header>
   )
